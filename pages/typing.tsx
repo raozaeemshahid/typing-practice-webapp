@@ -4,11 +4,11 @@ import Typing from "../components/typing";
 
 
 const Page: NextPage = () => {
-    const [keyPressed, changeKeyPress] = useState("")
+    const [keyPressed, changeKeyPress] = useState([""])
 
     useEffect(() => {
-        document.addEventListener("keydown", ({key}) => {
-            changeKeyPress(key)
+        document.addEventListener("keydown", (key) => {
+            changeKeyPress([key.key])
         })
     }, [])
     return <Typing keyPressed={keyPressed} />
