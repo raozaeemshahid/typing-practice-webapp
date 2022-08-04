@@ -5,7 +5,7 @@ import genTextObj from "../functions/genTextObj";
 import type { charBox } from "../functions/genTextObj";
 import { v4 as uuid } from "uuid";
 
-const Typing: NextPage = () => {
+const Typing: NextPage<{ keyPressed: string }> = ({ keyPressed }) => {
   const [text, changeText] = useState<Array<charBox>>([]);
   const [taskcompleted, changeCompleted] = useState(-1);
   const [currentWriter, changeCurrentWriter] = useState<number>(0);
@@ -16,7 +16,7 @@ const Typing: NextPage = () => {
 
   const setText = () => {
     const newText: Array<charBox> = genTextObj(noOfWords);
-    changeText([...newText]);
+    changeText(newText);
     return newText;
   };
 
@@ -27,8 +27,9 @@ const Typing: NextPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [noOfWords]);
 
-  const onType = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value === text[currentWriter].char) {
+  useEffect(() => {
+    if (text[currentWriter] == undefined) return;
+    if (keyPressed === text[currentWriter]?.char) {
       text[currentWriter].completed = true;
       text[currentWriter].typedWrong = false;
       changeText([...text]);
@@ -43,8 +44,8 @@ const Typing: NextPage = () => {
       text[currentWriter].typedWrong = true;
       changeText([...text]);
     }
-    e.target.value = "";
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [keyPressed]);
 
   const selectNoOfWords = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value == "random") {
@@ -80,7 +81,9 @@ const Typing: NextPage = () => {
             <pre
               className={`${box.completed ? "text-green-600" : ""} ${
                 index === currentWriter ? "text-blue-500 underline" : ""
-              } ${box.typedWrong ? "text-red-600" : ""} border border-solid border-opacity-50 px-1 text-2xl
+              } ${
+                box.typedWrong ? "text-red-600" : ""
+              } border border-solid border-opacity-50 px-1 text-2xl
               `}
               key={uuid()}
             >
@@ -89,12 +92,6 @@ const Typing: NextPage = () => {
           );
         })}
       </div>
-      <input
-        type="text"
-        placeholder="Start Typing Here..."
-        onChange={onType}
-        autoFocus
-      />
     </div>
   );
 };
