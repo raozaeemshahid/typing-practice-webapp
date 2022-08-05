@@ -2,6 +2,8 @@
 
 Simple web app build in Next.JS, to practice and write more fastly and accurately. Typing design inspired by [typing.com](http://typing.com/)
 
+Deployed Version: [Typing Practice Web App](https://typing-practice-webapp.vercel.app/)
+
 To get started with source code, install the required packages
 ```bash
 npm install
