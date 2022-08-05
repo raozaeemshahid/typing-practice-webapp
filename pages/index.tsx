@@ -12,7 +12,8 @@ const Home: NextPage = () => {
       </Head>
       <div className="text-center">
         <Link href="/typing"><a className="text-3xl hover:text-blue-600">Practice Typing</a></Link>
-        <p>Developed By Rao Zaeem</p>
+        <p className="text-sm mt-1">Developed By Rao Zaeem</p>
+        <a className="text-sm hover:text-blue-600" href="https://github.com/raozaeemshahid/typing-practice-webapp">Source Code</a>
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ const Typing: NextPage<{ keyPressed: string[] }> = ({ keyPressed }) => {
         <meta name="description" content="Practice Typing to type like a pro" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Link href="/"><a className="text-sm hover:text-blue-400">Go to Home</a></Link>
+      <Link href="/"><a className="text-sm hover:text-blue-600">Go to Home</a></Link>
       <SelectNoOfWords changeNoOfWords={changeNoOfWords} />
       <h1>Completed: {NoParagraphCompleted}</h1>
 
