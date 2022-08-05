@@ -15,7 +15,7 @@ const SelectNoOfWords: NextPage<{
     <div className="flex">
       <pre>No Of Words: </pre>
       <select name="NoOfWords" id="noofwords" onChange={selectNoOfWords}>
-        <option value="random">Random</option>
+        <option value="random">&quot;Random&quot;</option>
         {numbers1to100.map((num) => {
           return (
             <option value={`${num}`} key={num}>

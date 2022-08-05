@@ -5,6 +5,7 @@ import SelectNoOfWords from "./SelectNoWords";
 import TypingArea from "./TypingArea";
 import SpeedAndAccuracy, { TypingData } from "./SpeedAndAccuracy";
 import ProblemKeys from "./ProblemKeys";
+import Link from "next/link";
 
 const Typing: NextPage<{ keyPressed: string[] }> = ({ keyPressed }) => {
   const [NoParagraphCompleted, changeCompleted] = useState(-1);
@@ -30,7 +31,7 @@ const Typing: NextPage<{ keyPressed: string[] }> = ({ keyPressed }) => {
         <meta name="description" content="Practice Typing to type like a pro" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Link href="/"><a className="text-sm hover:text-blue-400">Go to Home</a></Link>
       <SelectNoOfWords changeNoOfWords={changeNoOfWords} />
       <h1>Completed: {NoParagraphCompleted}</h1>
 
