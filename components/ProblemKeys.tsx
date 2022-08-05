@@ -5,8 +5,8 @@ const ProblemKeys: NextPage<{ ProblemKeys: any }> = ({ ProblemKeys }) => {
     <div className="mt-4 flex">
       <h4 className="mr-2">Your Problem Keys: </h4>
       <ol className="flex flex-col">
-        {Object.keys(ProblemKeys)
-          .sort((a, b) => ProblemKeys[b] - ProblemKeys[a])
+        {Object.keys(ProblemKeys).length > 0 ?
+          Object.keys(ProblemKeys).sort((a, b) => ProblemKeys[b] - ProblemKeys[a])
           .map((char) => {
             return (
               <li className="flex px-1" key={char}>
@@ -19,7 +19,7 @@ const ProblemKeys: NextPage<{ ProblemKeys: any }> = ({ ProblemKeys }) => {
                 </pre>
               </li>
             );
-          })}
+          }): `N/A`}
       </ol>
     </div>
   );
