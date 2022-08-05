@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
-import Typing from "../components/typing";
+import Typing from "../components/Typing";
 
 
 const Page: NextPage = () => {
