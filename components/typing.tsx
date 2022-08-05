@@ -25,7 +25,7 @@ const Typing: NextPage<{ keyPressed: string[] }> = ({ keyPressed }) => {
   }
 
   return (
-    <div className="pl-4 pt-4">
+    <div className="pl-4 pt-4 pr-4">
       <Head>
         <title>Create Next App</title>
         <meta name="description" content="Practice Typing to type like a pro" />
