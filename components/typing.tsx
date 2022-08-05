@@ -27,8 +27,8 @@ const Typing: NextPage<{ keyPressed: string[] }> = ({ keyPressed }) => {
   return (
     <div className="pl-4 pt-4 pr-4">
       <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Practice Typing to type like a pro" />
+        <title>Typing Practice WebApp</title>
+        <meta name="description" content="Practice To Type More Fastly And Accurately" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Link href="/"><a className="text-sm hover:text-blue-600">Go to Home</a></Link>
