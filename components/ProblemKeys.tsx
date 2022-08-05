@@ -2,9 +2,9 @@ import { NextPage } from "next";
 
 const ProblemKeys: NextPage<{ ProblemKeys: any }> = ({ ProblemKeys }) => {
   return (
-    <div className="mt-4 flex">
+    <div className="mt-4 flex max-h-72 overflow-auto">
       <h4 className="mr-2">Your Problem Keys: </h4>
-      <ol className="flex flex-col">
+      <ol>
         {Object.keys(ProblemKeys).length > 0 ?
           Object.keys(ProblemKeys).sort((a, b) => ProblemKeys[b] - ProblemKeys[a])
           .map((char) => {
